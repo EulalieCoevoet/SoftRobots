@@ -113,11 +113,13 @@ protected:
     Data<Real>                          d_cavityVolume;
     Data<bool>                          d_flipNormal;
 
+    SOFA_ATTRIBUTE_DEPRECATED("v26.06", "v27.06", "Use d_lambda instead.")
     Data<double>                        d_pressure;
     Data<Real>                          d_maxPressure;
     Data<Real>                          d_minPressure;
     Data<Real>                          d_eqPressure;
     Data<Real>                          d_maxPressureVariation;
+    SOFA_ATTRIBUTE_DEPRECATED("v26.06", "v27.06", "Use d_delta instead.")
     Data<double>                        d_volumeGrowth;
     Data<Real>                          d_maxVolumeGrowth;
     Data<Real>                          d_minVolumeGrowth;

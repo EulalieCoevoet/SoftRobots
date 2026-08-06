@@ -801,7 +801,7 @@ void CableModel<DataTypes>::storeLambda(const ConstraintParams* cParams,
     // Eulalie.C: For now the position of the mechanical state is not up to date when storeLambda() is called
     //            so the value of delta is one step behind...
     //ReadAccessor<Data<VecCoord>> positions = m_state->readPositions();
-    //d_cableLength.setValue(getCableLength(positions.ref()));
+    //d[0] = getCableLength(positions.ref());
     d[0] = d_cableInitialLength.getValue()-d_cableLength.getValue();
     d_displacement.setValue(d_cableInitialLength.getValue()-d_cableLength.getValue());
 }
