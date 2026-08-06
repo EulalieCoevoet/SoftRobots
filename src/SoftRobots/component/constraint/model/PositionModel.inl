@@ -63,11 +63,7 @@ PositionModel<DataTypes>::PositionModel(MechanicalState* object)
                               "The parameter useDirections allows to select the directions in \n"
                               "which you want to solve the position. If unspecified, the default \n"
                               "values are all true."))
-
-    , d_delta(initData(&d_delta, "delta","Distance to target"))
 {
-    d_delta.setReadOnly(true);
-
     this->addUpdateCallback("updateWeight", {&d_weight}, [this](const sofa::core::DataTracker& t)
                             {
                                 SOFA_UNUSED(t);
@@ -187,8 +183,6 @@ void PositionModel<DataTypes>::checkIndicesRegardingState()
 }
 
 
-
-
 template<class DataTypes>
 void PositionModel<DataTypes>::setIndicesDefaultValue()
 {
@@ -196,13 +190,13 @@ void PositionModel<DataTypes>::setIndicesDefaultValue()
     defaultIndices.resize(1);
 }
 
+
 template<class DataTypes>
 void PositionModel<DataTypes>::resizeIndicesRegardingState()
 {
     WriteAccessor<sofa::Data<vector<unsigned int>>> indices = d_indices;
     indices.resize(m_state->getSize());
 }
-
 
 
 template<class DataTypes>
@@ -253,7 +247,7 @@ void PositionModel<DataTypes>::storeResults(vector<double> &delta)
     if(d_componentState.getValue() != ComponentState::Valid)
         return;
 
-    d_delta.setValue(delta);
+    this->d_delta.setValue(delta);
 }
 
 
