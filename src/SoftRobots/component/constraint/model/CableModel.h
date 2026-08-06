@@ -127,11 +127,13 @@ protected:
     sofa::type::vector<SetIndexArray> m_areaIndices;
     sofa::type::vector<sofa::type::vector<Real>> m_ratios;
 
-    sofa::type::vector<Real> m_alphaBarycentric;
-    sofa::type::vector<Real> m_betaBarycentric;
+    sofa::type::vector<Real>     m_alphaBarycentric;
+    sofa::type::vector<Real>     m_betaBarycentric;
     sofa::type::vector<Triangle> m_closestTriangle;
 
+    SOFA_ATTRIBUTE_DEPRECATED("v26.06", "v27.06", "Use d_lambda instead.")
     Data<double>                d_force; ///< pulling force applied on the cable
+    SOFA_ATTRIBUTE_DEPRECATED("v26.06", "v27.06", "Use d_delta instead.")
     Data<double>                d_displacement; ///< displacement of the cable
 
     Data<Real>                  d_maxForce; ///< maximum pulling force applied on the cable
