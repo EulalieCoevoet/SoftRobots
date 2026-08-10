@@ -55,6 +55,7 @@ CableConstraint<DataTypes>::CableConstraint(MechanicalState* object)
 {
     d_eqDisplacement.setDisplayed(false);
     d_eqForce.setDisplayed(false);
+    this->d_lambda.setDisplayed(false);
 }
 
 template<class DataTypes>
@@ -130,7 +131,7 @@ void CableConstraint<DataTypes>::setUpDisplacementLimits(Real& imposedValue, Rea
 {
     if(d_maxDispVariation.isSet())
     {
-        Real displacement = d_displacement.getValue();
+        Real displacement = this->d_delta.getValue()[0];
         if(imposedValue > displacement && imposedValue-displacement>d_maxDispVariation.getValue())
             imposedValue = displacement+d_maxDispVariation.getValue();
 
