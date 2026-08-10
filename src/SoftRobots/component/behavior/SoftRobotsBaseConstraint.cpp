@@ -44,7 +44,7 @@ SoftRobotsBaseConstraint::SoftRobotsBaseConstraint()
     , m_hasLambdaMin(false)
     , m_hasLambdaEqual(false)
     , m_hasLambdaInit(false)
-    , m_hasEpsilon(false)
+    , m_hasEnergyWeight(false)
 {
     d_constraintIndex.setReadOnly(true);
 
@@ -89,9 +89,9 @@ bool SoftRobotsBaseConstraint::hasLambdaInit() const
 }
 
 
-bool SoftRobotsBaseConstraint::hasEpsilon() const
+bool SoftRobotsBaseConstraint::hasEnergyWeight() const
 {
-    return m_hasEpsilon;
+    return m_hasEnergyWeight;
 }
 
 
@@ -153,9 +153,9 @@ SReal SoftRobotsBaseConstraint::getLambdaInit(const size_t i) const
 }
 
 
-SReal SoftRobotsBaseConstraint::getEpsilon() const
+SReal SoftRobotsBaseConstraint::getEnergyWeight() const
 {
-    return m_epsilon;
+    return m_energyWeight;
 }
 
 const sofa::core::objectmodel::Data<vector<double>>& SoftRobotsBaseConstraint::getLambda() const
