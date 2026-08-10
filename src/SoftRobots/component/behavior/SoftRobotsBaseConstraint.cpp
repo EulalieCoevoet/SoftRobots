@@ -35,7 +35,7 @@ using sofa::type::vector;
 SoftRobotsBaseConstraint::SoftRobotsBaseConstraint()
     :
       d_lambda(initData(&d_lambda, vector<double>(1, 0.0), "force", "Force. Warning: to get the actual force you should divide this value by dt."))
-    , d_delta(initData(&d_delta, vector<double>(1, 0.0), "displacement", "Displacement."))
+    , d_delta(initData(&d_delta, vector<double>(1, 0.0), "displacement", "Displacement compared to the initial value."))
     , m_nbLines(1)
     , m_hasDeltaMax(false)
     , m_hasDeltaMin(false)
