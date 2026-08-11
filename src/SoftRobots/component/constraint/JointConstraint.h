@@ -147,6 +147,8 @@ protected:
     using SoftRobotsConstraint<DataTypes>::d_constraintIndex ;
     using SoftRobotsConstraint<DataTypes>::m_nbLines ;
     using SoftRobotsConstraint<DataTypes>::d_componentState ;
+    using SoftRobotsConstraint<DataTypes>::d_delta ;
+    using SoftRobotsConstraint<DataTypes>::d_lambda ;
     ////////////////////////////////////////////////////////////////////////////
 
     //Input data

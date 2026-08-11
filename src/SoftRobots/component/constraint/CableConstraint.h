@@ -124,6 +124,7 @@ public:
     ////////////////////////////////////////////////////////////////
 
     ////////////////////////// Inherited attributes ////////////////////////////
+    using CableModel<DataTypes>::d_delta ;
     using CableModel<DataTypes>::d_maxDispVariation ;
     using CableModel<DataTypes>::d_maxPositiveDisplacement ;
     using CableModel<DataTypes>::d_maxNegativeDisplacement ;

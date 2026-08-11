@@ -145,7 +145,7 @@ void SurfacePressureConstraint<DataTypes>::setUpVolumeLimits(Real& imposedValue,
 {
     if(d_maxVolumeGrowthVariation.isSet())
     {
-        double volumeGrowth = this->d_delta.getValue()[0];
+        double volumeGrowth = d_delta.getValue()[0];
         if(imposedValue > volumeGrowth && imposedValue-volumeGrowth>d_maxVolumeGrowthVariation.getValue())
             imposedValue = volumeGrowth+d_maxVolumeGrowthVariation.getValue();
 

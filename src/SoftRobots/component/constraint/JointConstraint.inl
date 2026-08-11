@@ -211,8 +211,8 @@ void JointConstraint<DataTypes>::storeLambda(const ConstraintParams* cParams,
     if(d_componentState.getValue() != ComponentState::Valid)
         return ;
 
-    auto l = sofa::helper::getWriteAccessor(this->d_lambda);
-    auto d = sofa::helper::getWriteAccessor(this->d_delta);
+    auto l = sofa::helper::getWriteAccessor(d_lambda);
+    auto d = sofa::helper::getWriteAccessor(d_delta);
 
     // Update joint effort
     l[0] = lambda->element(d_constraintIndex.getValue());

@@ -117,11 +117,13 @@ SurfacePressureModel<DataTypes>::SurfacePressureModel(MechanicalState* object)
 {
     setUpData();
 
-    this->d_lambda.setHelp("Pressure. Warning: to get the actual pressure you should divide this value by dt.");
-    this->d_delta.setHelp("Volume growth.");
+    this->addAlias(&d_delta, "volumeGrowth");
+    d_delta.setName("volumeGrowth");
+    d_delta.setHelp("Volume growth.");
 
-    this->d_lambda.setName("pressure");
-    this->d_delta.setName("volumeGrowth");
+    this->addAlias(&d_lambda, "pressure");
+    d_lambda.setName("pressure");
+    d_lambda.setHelp("Pressure. Warning: to get the actual pressure you should divide this value by dt.");
 }
 
 template<class DataTypes>
@@ -371,8 +373,8 @@ void SurfacePressureModel<DataTypes>::storeLambda(const ConstraintParams* cParam
     if(d_componentState.getValue() != ComponentState::Valid)
             return ;
 
-    auto l = sofa::helper::getWriteAccessor(this->d_lambda);
-    auto d = sofa::helper::getWriteAccessor(this->d_delta);
+    auto l = sofa::helper::getWriteAccessor(d_lambda);
+    auto d = sofa::helper::getWriteAccessor(d_delta);
 
     l[0] = lambda->element(d_constraintIndex.getValue());
     d_pressure.setValue(lambda->element(d_constraintIndex.getValue()));

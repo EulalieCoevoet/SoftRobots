@@ -94,6 +94,7 @@ protected:
     using SoftRobotsConstraint<DataTypes>::d_constraintIndex ;
     using SoftRobotsConstraint<DataTypes>::d_componentState ;
     using SoftRobotsConstraint<DataTypes>::m_state ;
+    using SoftRobotsConstraint<DataTypes>::d_delta ;
     ////////////////////////////////////////////////////////////////////////////
 
     void setDefaultDirections();

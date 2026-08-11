@@ -117,6 +117,8 @@ protected:
     SReal getAffineFunctionValue(const VecCoord &positions);
 
     ////////////////////////// Inherited attributes ////////////////////////////
+    using SoftRobotsConstraint<DataTypes>::d_delta ;
+    using SoftRobotsConstraint<DataTypes>::d_lambda ;
     using SoftRobotsConstraint<DataTypes>::m_nbLines ;
     using SoftRobotsConstraint<DataTypes>::d_constraintIndex ;
     using SoftRobotsConstraint<DataTypes>::m_state ;

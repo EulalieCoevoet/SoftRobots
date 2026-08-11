@@ -128,6 +128,7 @@ protected:
     vector<Real>                            m_initialValue;
 
     ////////////////////////// Inherited attributes ////////////////////////////
+    using SurfacePressureModel<DataTypes>::d_delta ;
     using SurfacePressureModel<DataTypes>::d_maxVolumeGrowthVariation ;
     using SurfacePressureModel<DataTypes>::d_maxVolumeGrowth ;
     using SurfacePressureModel<DataTypes>::d_minVolumeGrowth ;

@@ -131,7 +131,7 @@ void CableConstraint<DataTypes>::setUpDisplacementLimits(Real& imposedValue, Rea
 {
     if(d_maxDispVariation.isSet())
     {
-        Real displacement = this->d_delta.getValue()[0];
+        Real displacement = d_delta.getValue()[0];
         if(imposedValue > displacement && imposedValue-displacement>d_maxDispVariation.getValue())
             imposedValue = displacement+d_maxDispVariation.getValue();
 

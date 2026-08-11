@@ -148,7 +148,7 @@ protected:
     Data<bool>                  d_drawPoints; ///< to draw center points of cable
     Data<bool>                  d_drawPulledAreas; ///< to draw points in cable area effect
 
-    Data<sofa::type::RGBAColor>       d_color;
+    Data<sofa::type::RGBAColor> d_color;
 
     bool                        m_hasSlidingPoint;
 
@@ -160,6 +160,8 @@ protected:
     /// Bring m_state in the current lookup context.
     /// otherwise any access to the base::attribute would require
     /// using the "this->" approach.
+    using SoftRobotsConstraint<DataTypes>::d_delta ;
+    using SoftRobotsConstraint<DataTypes>::d_lambda ;
     using SoftRobotsConstraint<DataTypes>::m_nbLines ;
     using SoftRobotsConstraint<DataTypes>::d_constraintIndex ;
     using SoftRobotsConstraint<DataTypes>::m_state ;
