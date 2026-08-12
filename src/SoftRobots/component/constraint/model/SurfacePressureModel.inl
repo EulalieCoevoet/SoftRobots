@@ -117,13 +117,8 @@ SurfacePressureModel<DataTypes>::SurfacePressureModel(MechanicalState* object)
 {
     setUpData();
 
-    this->addAlias(&d_delta, "volumeGrowth");
-    d_delta.setName("volumeGrowth");
-    d_delta.setHelp("Volume growth.");
-
-    this->addAlias(&d_lambda, "pressure");
-    d_lambda.setName("pressure");
-    d_lambda.setHelp("Pressure. Warning: to get the actual pressure you should divide this value by dt.");
+    this->setLambdaDescription("pressure", "Pressure. Warning: to get the actual pressure you should divide this value by dt.");
+    this->setDeltaDescription("volumeGrowth", "Volume growth");
 }
 
 template<class DataTypes>

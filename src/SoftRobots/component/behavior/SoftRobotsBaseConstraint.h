@@ -127,6 +127,12 @@ public:
     /// Accessor to nbLines value
     unsigned int getNbLines() const;
 
+    /// By default, the data d_lambda is described as a force. Depending on the constraint, this can change (e.g., to pressure)
+    void setLambdaDescription(const std::string& name, const std::string& help);
+
+    /// By default, the data d_delta is described as a displacement. Depending on the constraint, this can change (e.g., to volume growth)
+    void setDeltaDescription(const std::string& name, const std::string& help);
+
 
     /// Allows the constraint to access the results. Called from QPInverseProblemSolver.
     virtual void storeResults(vector<double> &lambda, vector<double> &delta);

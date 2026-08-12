@@ -184,6 +184,31 @@ void SoftRobotsBaseConstraint::storeResults(vector<double> &delta)
     SOFA_UNUSED(delta);
 }
 
+
+void SoftRobotsBaseConstraint::setLambdaDescription(const std::string& name, const std::string& help)
+{
+    if (!name.empty())
+    {
+        addAlias(&d_lambda, name.c_str());
+        d_lambda.setName(name);
+    }
+
+    if (!help.empty())
+        d_lambda.setHelp(help);
+}
+
+void SoftRobotsBaseConstraint::setDeltaDescription(const std::string& name, const std::string& help)
+{
+    if (!name.empty())
+    {
+        addAlias(&d_delta, name.c_str());
+        d_delta.setName(name);
+    }
+
+    if (!help.empty())
+        d_delta.setHelp(help);
+}
+
 void SoftRobotsBaseConstraint::resizeConstraints(const sofa::Size& size)
 {
     m_nbLines = size;
