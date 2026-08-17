@@ -185,28 +185,38 @@ void SoftRobotsBaseConstraint::storeResults(vector<double> &delta)
 }
 
 
-void SoftRobotsBaseConstraint::setLambdaDescription(const std::string& name, const std::string& help)
+void SoftRobotsBaseConstraint::setLambdaNameAndHelp(const std::string& name, const std::string& help)
 {
-    if (!name.empty())
-    {
-        addAlias(&d_lambda, name.c_str());
-        d_lambda.setName(name);
-    }
-
-    if (!help.empty())
-        d_lambda.setHelp(help);
+    setLambdaName(name);
+    setLambdaHelp(help);
 }
 
-void SoftRobotsBaseConstraint::setDeltaDescription(const std::string& name, const std::string& help)
+void SoftRobotsBaseConstraint::setLambdaName(const std::string& name)
 {
-    if (!name.empty())
-    {
-        addAlias(&d_delta, name.c_str());
-        d_delta.setName(name);
-    }
+    addAlias(&d_lambda, name.c_str());
+    d_lambda.setName(name);
+}
 
-    if (!help.empty())
-        d_delta.setHelp(help);
+void SoftRobotsBaseConstraint::setLambdaHelp(const std::string& help)
+{
+    d_lambda.setHelp(help);
+}
+
+void SoftRobotsBaseConstraint::setDeltaNameAndHelp(const std::string& name, const std::string& help)
+{
+    setDeltaName(name);
+    setDeltaHelp(help);
+}
+
+void SoftRobotsBaseConstraint::setDeltaName(const std::string& name)
+{
+    addAlias(&d_delta, name.c_str());
+    d_delta.setName(name);
+}
+
+void SoftRobotsBaseConstraint::setDeltaHelp(const std::string& help)
+{
+    d_delta.setHelp(help);
 }
 
 void SoftRobotsBaseConstraint::resizeConstraints(const sofa::Size& size)

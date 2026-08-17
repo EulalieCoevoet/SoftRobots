@@ -64,7 +64,7 @@ PositionModel<DataTypes>::PositionModel(MechanicalState* object)
                               "which you want to solve the position. If unspecified, the default \n"
                               "values are all true."))
 {
-    this->setDeltaDescription("delta", "Distance to target.");
+    this->setDeltaNameAndHelp("delta", "Distance to target.");
 
     this->addUpdateCallback("updateWeight", {&d_weight}, [this](const sofa::core::DataTracker& t)
                             {
