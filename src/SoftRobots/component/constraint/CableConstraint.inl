@@ -55,7 +55,6 @@ CableConstraint<DataTypes>::CableConstraint(MechanicalState* object)
 {
     d_eqDisplacement.setDisplayed(false);
     d_eqForce.setDisplayed(false);
-    this->d_lambda.setDisplayed(false);
 }
 
 template<class DataTypes>
